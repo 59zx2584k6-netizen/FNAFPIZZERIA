@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Fazbear Entertainment.</title>
+<style>
+  body {
+    margin: 0;
+    font-family: 'Courier New', monospace;
+    background-color: #0a0a0a;
+    color: #fff;
+    text-align: center;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  header {
+    background: linear-gradient(90deg, #b30000, #000);
+    padding: 25px;
+    box-shadow: 0 0 15px #b30000;
+  }
+
+  h1 {
+    font-size: 2.5em;
+    text-shadow: 0 0 15px red;
+  }
+
+  h2 {
+    text-shadow: 0 0 10px #ff0000;
+  }
+
+  /* --- Galería --- */
+  .gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin: 40px 0;
+  }
+
+  .gallery img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border: 3px solid red;
+    border-radius: 10px;
+    box-shadow: 0 0 15px red;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .gallery img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px #ff0000;
+  }
+
+  /* --- Cuadro de contacto --- */
+  section {
+    padding: 40px 20px;
+  }
+
+  .contact-box {
+    background-color: rgba(255, 0, 0, 0.1);
+    border: 2px solid red;
+    box-shadow: 0 0 20px red;
+    width: 90%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  .contact-box input, .contact-box textarea {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #1a1a1a;
+    color: #fff;
+    border: 1px solid red;
+    border-radius: 5px;
+    outline: none;
+  }
+
+  .contact-box button {
+    background-color: red;
+    border: none;
+    color: #fff;
+    padding: 10px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+
+  .contact-box button:hover {
+    background-color: #ff3333;
+    box-shadow: 0 0 15px #ff0000;
+  }
+
+  footer {
+    background-color: #111;
+    padding: 15px;
+    margin-top: 40px;
+    border-top: 2px solid red;
+  }
+
+  /* --- Logos en esquinas --- */
+  .corner-logo {
+    position: absolute;
+    width: 70px;
+    opacity: 0.7;
+    transition: transform 0.3s, opacity 0.3s;
+  }
+
+  .corner-logo:hover {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+
+  .corner-top-left {
+    top: 15px;
+    left: 15px;
+  }
+
+  .corner-top-right {
+    top: 15px;
+    right: 15px;
+  }
+
+  .corner-bottom-left {
+    bottom: 15px;
+    left: 15px;
+  }
+
+  .corner-bottom-right {
+    bottom: 15px;
+    right: 15px;
+  }
+
+  @keyframes flicker {
+    0% {opacity: 1;}
+    50% {opacity: 0.8;}
+    100% {opacity: 1;}
+  }
+
+  h1, h2 {
+    animation: flicker 1.5s infinite alternate;
+  }
+</style>
+</head>
+<body>
+  <!-- Logotipos tipo FNAF en las esquinas -->
+  <img src="logofnaf.jpg" class="corner-logo corner-top-left" alt="Logo Freddy">
+  <img src="logofnaf.jpg" class="corner-logo corner-top-right" alt="Logo Freddy">
+  <img src="logofnaf.jpg" class="corner-logo corner-bottom-left" alt="Logo Freddy">
+  <img src="logofnaf.jpg" class="corner-logo corner-bottom-right" alt="Logo Freddy">
+
+  <header>
+    <h1>🍕 Freddys Fazbear Pizzeria. 🍕</h1>
+    <p>“¡Bienvenido a Freddy’s Pizzeria!
+Donde cada mordida es una experiencia… y cada noche una aventura.
+Entre luces parpadeantes y risas que nunca se apagan, la diversión está servida, caliente y lista para ti..”</p>
+  </header>
+
+  <section class="gallery">
+    <div>
+      <img src="freddyspizza.jpg" alt="Pizza Freddy">
+      <p><strong>Pizza Freddy:</strong>Freddy’s Pizza: una explosión de queso fundido, pepperoni crujiente y ese sabor irresistible que te hace volver… incluso después del cierre. 🍕🔥</p>
+    </div>
+    <div>
+      <img src="chicapizza.jpg" alt="Pizza Chica">
+      <p><strong>Pizza Chica:</strong>Pizza Chica: una deliciosa mezcla de jamón, piña y queso fundido. Dulce, jugosa y con el sabor que te hará decir “Let’s eat!” 💛🍍. </p>
+    </div>
+    <div>
+      <img src="bonniespizza.jpg" alt="Pizza Bonnie">
+      <p><strong>Pizza Bonnie:</strong> Pizza Bonnie: queso derretido, tocino ahumado y una base crujiente que despierta todos tus sentidos. Un sabor potente… imposible de olvidar. 🐰🔥</p>
+    </div>
+  </section>
+
+  <section id="contacto">
+    <h2>Haz tu pedido o contáctanos...</h2>
+    <div class="contact-box">
+      <input type="text" id="nombre" placeholder="Tu nombre">
+      <input type="email" id="correo" placeholder="Tu correo">
+      <textarea id="mensaje" rows="4" placeholder="Tu mensaje..."></textarea>
+      <button onclick="enviarMensaje()">Enviar</button>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Freddy’s Pizzeria | Francisco Alexander Orellana Lopez. 🔦 </p>
+  </footer>
+
+  <script>
+    function enviarMensaje() {
+      const nombre = document.getElementById('nombre').value;
+      const correo = document.getElementById('correo').value;
+      const mensaje = document.getElementById('mensaje').value;
+
+      if (nombre === "" || correo === "" || mensaje === "") {
+        alert("⚠ Por favor completa todos los campos antes de enviar.");
+      } else {
+        alert("Gracias " + nombre + "! Tu pedido ha sido registrado. 🍕");
+        document.getElementById('nombre').value = "";
+        document.getElementById('correo').value = "";
+        document.getElementById('mensaje').value = "";
+      }
+    }
+  </script>
+</body>
+</html>
